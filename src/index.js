@@ -1,4 +1,3 @@
-
 const tasks = [
   {
     description: 'Clean the house',
@@ -23,7 +22,7 @@ function renderTasks() {
   tasks.sort((a, b) => a.index - b.index); // Sort tasks by index
 
   for (let i = 0; i < tasks.length; i += 1) {
-    let task = tasks[i];
+    const task = tasks[i];
     const listItem = document.createElement('li');
     listItem.textContent = task.description;
 
@@ -36,7 +35,7 @@ function renderTasks() {
         </div>
       </div>
 
-    `
+    `;
 
     if (task.completed) {
       listItem.classList.add('completed');
