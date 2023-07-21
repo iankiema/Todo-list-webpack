@@ -1,7 +1,20 @@
 import './style.css';
 import {
-  clearCompletedTasks, addTask, loadTasksFromLocalStorage, todoForm, taskInput, clearCompletedBtn,
+  addTask, todoForm, taskInput, clearCompletedBtn,
+  clearCompletedTasks, loadTasksFromLocalStorage, renderTasks,
 } from './todoFunctions.js';
+
+// Load tasks from local storage on page load
+document.addEventListener('DOMContentLoaded', loadTasksFromLocalStorage);
+
+renderTasks();
+// renderTasks(addTask());
+// renderTasks(deleteTask());
+// renderTasks(loadTasksFromLocalStorage());
+// renderTasks(updateTaskDescription());
+// renderTasks(clearCompletedTasks());
+// renderTasks(toggleTaskEditing());
+// renderTasks(toggleTaskCompletion());
 
 // Event listener to add a new task
 todoForm.addEventListener('submit', (event) => {
@@ -14,6 +27,3 @@ todoForm.addEventListener('submit', (event) => {
 
 // Event listener to clear completed tasks
 clearCompletedBtn.addEventListener('click', clearCompletedTasks);
-
-// Load tasks from local storage on page load
-document.addEventListener('DOMContentLoaded', loadTasksFromLocalStorage);
