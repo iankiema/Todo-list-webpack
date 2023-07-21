@@ -1,48 +1,29 @@
-const tasks = [
-  {
-    description: 'Clean the house',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Wash the dishes',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'Wash the car',
-    completed: false,
-    index: 3,
-  },
-];
+import './style.css';
+import {
+  addTask, todoForm, taskInput, clearCompletedBtn,
+  clearCompletedTasks, loadTasksFromLocalStorage, renderTasks,
+} from './todoFunctions.js';
 
-function renderTasks() {
-  const taskList = document.getElementById('task-list');
+// Load tasks from local storage on page load
+document.addEventListener('DOMContentLoaded', loadTasksFromLocalStorage);
 
-  tasks.sort((a, b) => a.index - b.index); // Sort tasks by index
+renderTasks();
+// renderTasks(addTask());
+// renderTasks(deleteTask());
+// renderTasks(loadTasksFromLocalStorage());
+// renderTasks(updateTaskDescription());
+// renderTasks(clearCompletedTasks());
+// renderTasks(toggleTaskEditing());
+// renderTasks(toggleTaskCompletion());
 
-  for (let i = 0; i < tasks.length; i += 1) {
-    const task = tasks[i];
-    const listItem = document.createElement('li');
-    listItem.textContent = task.description;
+// Event listener to add a new task
+todoForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const taskDescription = taskInput.value.trim();
+  if (taskDescription === '') return;
+  addTask(taskDescription);
+  taskInput.value = '';
+});
 
-    listItem.innerHTML = `
-    <div class='list-container'>
-        <input type='checkbox'>
-        <label>${task.description}</label>
-        <div class="task-actions">
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-      </div>
-
-    `;
-
-    if (task.completed) {
-      listItem.classList.add('completed');
-    }
-
-    taskList.appendChild(listItem);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', renderTasks);
+// Event listener to clear completed tasks
+clearCompletedBtn.addEventListener('click', clearCompletedTasks);
