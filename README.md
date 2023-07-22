@@ -30,11 +30,11 @@
 
 
 
-# 📖 Harmony Fest <a name="about-project"></a>
+# 📖 To-Do list <a name="about-project"></a>
 
 
 
-**Harmony Fest** To-do list is a simple but functional app that helps the user to add and remove daily to do tasks
+**To-Do List** To-do list is a simple but functional app that helps the user to add and remove daily to do tasks.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -82,6 +82,10 @@ In order to run this project you need:
     <li>Css Knowledge</li>
     <li>Local file storage</li>
 </ul>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link]( https://iankiema.github.io/Todo-list-webpack/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
